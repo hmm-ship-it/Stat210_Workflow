@@ -1,0 +1,38 @@
+---
+title: "Work Flow"
+output: html_WorkFlow
+---
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+#2* 5
+#x = 3*4
+#x<- 3*5
+# <- alt + - makes assignment operator
+# Objects must be named starting with letter, can contain . _ and numbers
+#x
+this_is_a_really_long_name <- 2.5
+this_is_a_really_long_name1 <- 4.4
+this_is_a_really_long_name <- 3.5
+#Ctrl + Alt + Enter seems to do something extra in linux because it gives bash: -: No such file or directory
+seq(1,10)
+(x <- "hello world")
+
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+# Answers
+
+1. Why does this code not work?
+Answer: the i is not an i
+2.
+```{r}
+library(tidyverse)
+
+ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y= hwy))
+
+filter(mpg, cyl == 8)
+filter(mpg, displ > 3)
+```
