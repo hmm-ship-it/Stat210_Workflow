@@ -3,9 +3,11 @@ title: "Work Flow"
 output: html_WorkFlow
 ---
 
+
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
 
 ```{r}
+install.packages("nycflights13")
 #2* 5
 #x = 3*4
 #x<- 3*5
@@ -36,3 +38,15 @@ ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y= hwy))
 filter(mpg, cyl == 8)
 filter(mpg, displ > 3)
 ```
+```{r}
+library(dplyr)
+library(nycflights13)
+
+not_cancelled <- flights %>%
+  filter(!is.na(dep_delay), !is.na(arr_delay))
+  
+not_cancelled %>%
+  group_by(year, month, day) %>%
+  summarise(mean = mean(dep_delay))
+```
+

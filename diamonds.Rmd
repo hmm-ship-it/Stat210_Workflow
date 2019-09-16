@@ -1,0 +1,17 @@
+---
+title: "Diamonds"
+author: "Timothy Hanneman"
+date: "9/16/2019"
+output: html_document
+---
+```{r}
+library(tidyverse)
+
+
+ggplot(diamonds, aes(carat, price)) +
+  geom_hex()
+ggsave("diamonds.pdf")
+
+write_csv(diamonds, "diamonds.cvs")
+```
+
